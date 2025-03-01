@@ -39,7 +39,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "PythonFramework",
-            path: "PythonFramework/prebuilt/Python.xcframework.zip"
+            url: "https://github.com/RealLast/SwiftPython/releases/download/v0.0.1/Python.xcframework.zip",
+            checksum: "f94956cdfab8002a7db9c0e398f1268fb9f1002e74d717290982a5055f78ecf6"
         ),
     ]
 )

@@ -46,7 +46,7 @@ def say_hello(text):
 
 Place it under Resources:
 
-![Python file in resources](pictures/python_file_resources.png)
+<img src="pictures/python_file_resources.png" alt="Python file in resources" width="75%">
 
 In your Swift code, you can import SwiftPython and start the Python Interpreter. Afterward you can import your module and call any functions or instantiate classes defined in the python code:
 ``` python
