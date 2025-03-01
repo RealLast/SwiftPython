@@ -44,11 +44,19 @@ def say_hello(text):
     print(string)
     return string
 ```
-Put it under Resources:
 
-[Python file in resources](pictures/python_file_resources.png)
+Place it under Resources:
+
+![Python file in resources](pictures/python_file_resources.png)
 
 In your Swift code, you can import SwiftPython and start the Python Interpreter. Afterward you can import your module and call any functions or instantiate classes defined in the python code:
+``` python
+let myModule = Python.import("MyPythonModule")
+let result = myModule.say_hello("Hello World")
+```
+
+You can even use the output of your Python function in a SwiftUI view:
+
 ``` swift
 import SwiftUI
 import SwiftPython
@@ -78,8 +86,9 @@ struct SwiftPythonDemoAppApp: App {
         print("Got Python version \(text)")
     }
 }
-
 ```
+
+![Python hello](pictures/python_hello.png)
 
 ## Supported Python packages
 
