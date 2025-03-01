@@ -89,8 +89,6 @@ struct SwiftPythonDemoAppApp: App {
 
 <img src="pictures/python_hello.png" alt="Python hello" width="50%">
 
-![Python hello](pictures/python_hello.png)
-
 ## Supported Python packages
 
 ### Packages included in the prebuilt binary
