@@ -55,10 +55,10 @@ let result = myModule.say_hello("Hello World")
 ```
 
 You can even use the output of your Python function in a SwiftUI view:
-<table>
-  <tr>
-    <td>
 
+<div style="display: flex;">
+  <div style="width: 50%;">
+  
 ```swift
 import SwiftUI
 import SwiftPython
@@ -87,10 +87,10 @@ struct SwiftPythonDemoAppApp: App {
         let text = ("Python \(sys.version_info.major).\(sys.version_info.minor)")
         print("Got Python version \(text)")
     }
-}
+} 
 ```
 
-</td> <td> <img src="pictures/python_hello.png" alt="Python hello" width="100%"> </td> </tr> </table> 
+</div> <div style="width: 50%;"> <img src="pictures/python_hello.png" alt="Python hello" width="100%"> </div> </div> 
 
 
 ## Supported Python packages
