@@ -36,8 +36,7 @@ let package = Package(
 ## Usage
 > **You can find a demo application under [DemoApp/SwiftPythonDemoApp](DemoApp/SwiftPythonDemoApp/)**
 
-Put your Python files in the Resources or assets folder of your App. E.g., consider a python file "MyPythonModule.py": 
-
+Create a Python File, e.g., "MyPythonModule.py":
 ``` python
 def say_hello(text):
     string = f"PythonModule says \"{text}\""
@@ -88,7 +87,8 @@ struct SwiftPythonDemoAppApp: App {
 }
 ```
 
-![Python hello](pictures/python_hello.png)
+<img src="pictures/python_hello.png" alt="Python hello" width="50%">
+
 
 ## Supported Python packages
 
