@@ -56,10 +56,7 @@ let result = myModule.say_hello("Hello World")
 
 You can even use the output of your Python function in a SwiftUI view:
 
-<div style="display: flex;">
-  <div style="width: 50%;">
-  
-```swift
+``` swift
 import SwiftUI
 import SwiftPython
 import PythonKit
@@ -87,15 +84,21 @@ struct SwiftPythonDemoAppApp: App {
         let text = ("Python \(sys.version_info.major).\(sys.version_info.minor)")
         print("Got Python version \(text)")
     }
-} 
+}
 ```
 
-</div> <div style="width: 50%;"> <img src="pictures/python_hello.png" alt="Python hello" width="100%"> </div> </div> 
+<img src="pictures/python_hello.png" alt="Python hello" width="50%">
 
+![Python hello](pictures/python_hello.png)
 
 ## Supported Python packages
 
 ### Packages included in the prebuilt binary
+The following packages are currently included by default:
+
+- python stdlib (i.e., sys, path, os, ...)
+- numpy
+- pandas
 
 ### How can I include further python packages?
 If you want to add more python packages, you need to build the Python binary from scratch (see below). The Python binary is built using [briefcase](https://beeware.org/project/briefcase/). It supports including Python packages from [pypi](https://pypi.org/). You can include any pip package as long as, either:
