@@ -90,14 +90,15 @@ struct SwiftPythonDemoAppApp: App {
 
 <img src="pictures/python_hello.png" alt="Python hello" width="50%">
 
-### Packages included in the prebuilt binary
+## Supported python packages
 The following packages are currently included by default:
 
 - python stdlib (i.e., sys, path, os, ...)
 - numpy
 - pandas
+- matplotlib
 
-### How can I include further python packages?
+### How can I include further Python packages?
 If you want to add more python packages, you need to build the Python binary from scratch (see below). The Python binary is built using [briefcase](https://beeware.org/project/briefcase/). It supports including Python packages from [pypi](https://pypi.org/). You can include any pip package as long as, either:
 1. The package is python-only, which is true for most packages.
 2. Or, the package is not python-only but is supported by briefcase, check here: [supported python packages with native components](https://anaconda.org/beeware/repo). 
@@ -121,7 +122,7 @@ Find the Line saying "Add your cross-platform app requirements here":
 requires = [
     # Add your cross-platform app requirements here
     "numpy",
-    "pandas"
+    "pandas",
     "matplotlib"
 ]
 ```
@@ -132,7 +133,8 @@ Add your required pip package. Make sure it fullfills the [requirements](#how-ca
 requires = [
     # Add your cross-platform app requirements here
     "numpy",
-    "pandas"
+    "pandas",
+    "matplotlib",
     "claid==0.6.4"
 ]
 ```

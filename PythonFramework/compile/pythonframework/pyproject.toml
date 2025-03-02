@@ -23,7 +23,8 @@ test_sources = [
 requires = [
     # Add your cross-platform app requirements here
     "numpy",
-    "pandas"
+    "pandas",
+    "matplotlib"
 ]
 test_requires = [
     # Add your cross-platform test requirements here
