@@ -151,8 +151,8 @@ In the [Package.swift](Package.swift) of this repository, you can find the follo
 ``` swift
 .binaryTarget(
         name: "PythonFramework",
-        url: "https://github.com/RealLast/SwiftPython/releases/download/v0.0.1/Python.xcframework.zip",
-        checksum: "f94956cdfab8002a7db9c0e398f1268fb9f1002e74d717290982a5055f78ecf6"
+        url: "https://github.com/RealLast/SwiftPython/releases/download/v0.9/Python.xcframework.zip",
+        checksum: "dadedc75985f60f803fa0077ed26bb15ca102de6c8628163735a83a57ef95839"
     ),
 ```
 
