@@ -10,7 +10,7 @@ Features:
 **The default version is Python 3.10.**
 
 ## Installation
-As with any other Swift package, simply include the path to this repository as dependency in the Swift package manger.
+As with any other Swift package, simply include the path to this repository as dependency in the Swift package manager:
 
 ``` sh
 https://github.com/RealLast/SwiftPython
@@ -50,6 +50,7 @@ Place it under Resources:
 
 In your Swift code, you can import SwiftPython and start the Python Interpreter. Afterward you can import your module and call any functions or instantiate classes defined in the python code:
 ``` python
+SwiftPython.startPythonInterpreter()
 let myModule = Python.import("MyPythonModule")
 let result = myModule.say_hello("Hello World")
 ```
@@ -89,8 +90,6 @@ struct SwiftPythonDemoAppApp: App {
 
 <img src="pictures/python_hello.png" alt="Python hello" width="50%">
 
-## Supported Python packages
-
 ### Packages included in the prebuilt binary
 The following packages are currently included by default:
 
@@ -103,4 +102,63 @@ If you want to add more python packages, you need to build the Python binary fro
 1. The package is python-only, which is true for most packages.
 2. Or, the package is not python-only but is supported by briefcase, check here: [supported python packages with native components](https://anaconda.org/beeware/repo). 
 
+To include further packages, check out the instructions below on how to build python binary (xcframework) from scratch:
+
 ## Building the python binary from scratch (to include more packages).
+
+### 1. Installing dependencies:
+Install briefcase:
+``` sh
+pip install beeware
+```
+
+### 2. Adding packages:
+Open the file [pyproject.toml](PythonFramework/compile/pythonframework/pyproject.toml) under PythonFramework/compile/pythonframework.
+
+Find the Line saying "Add your cross-platform app requirements here": 
+
+``` toml
+requires = [
+    # Add your cross-platform app requirements here
+    "numpy",
+    "pandas"
+    "matplotlib"
+]
+```
+
+Add your required pip package. Make sure it fullfills the [requirements](#how-can-i-include-further-python-packages). For example, add CLAID:
+
+``` toml
+requires = [
+    # Add your cross-platform app requirements here
+    "numpy",
+    "pandas"
+    "claid==0.6.4"
+]
+```
+
+### 3. Building
+Use make to build the package:
+``` sh
+make all
+```
+
+### 4. Updating the path to the framework:
+In the [Package.swift](Package.swift) of this repository, you can find the following lines which include the prebuilt xcframework which we provide:
+
+``` swift
+.binaryTarget(
+        name: "PythonFramework",
+        url: "https://github.com/RealLast/SwiftPython/releases/download/v0.0.1/Python.xcframework.zip",
+        checksum: "f94956cdfab8002a7db9c0e398f1268fb9f1002e74d717290982a5055f78ecf6"
+    ),
+```
+
+As you see, this points to our prebuilt binary hosted on GitHub. Since you just built an updated package locally, you need to change this statement to include your local xcframework:
+
+``` swift
+.binaryTarget(
+    name: "PythonFramework",
+    path: "PythonFramework/prebuilt/Python.xcframework"
+),
+```
