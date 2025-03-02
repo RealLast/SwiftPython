@@ -105,7 +105,7 @@ If you want to add more python packages, you need to build the Python binary fro
 
 To include further packages, check out the instructions below on how to build python binary (xcframework) from scratch:
 
-## Building the python binary from scratch (to include more packages).
+## Building the python binary from scratch (to include more packages)
 
 ### 1. Installing dependencies:
 Install briefcase:
@@ -114,7 +114,7 @@ pip install beeware
 ```
 
 ### 2. Adding packages:
-Open the file [pyproject.toml](PythonFramework/compile/pythonframework/pyproject.toml) under PythonFramework/compile/pythonframework.
+Open the file [pyproject.toml](https://github.com/RealLast/SwiftPython/blob/main/PythonFramework/compile/pythonframework/pyproject.toml#L24) under PythonFramework/compile/pythonframework.
 
 Find the Line saying "Add your cross-platform app requirements here": 
 
