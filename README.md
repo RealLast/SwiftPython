@@ -23,7 +23,7 @@ import PackageDescription
 let package = Package(
     name: "YourProject",
     dependencies: [
-        .package(url: "https://github.com/RealLast/SwiftPython", branch: "master")
+        .package(url: "https://github.com/RealLast/SwiftPython", branch: "main")
     ],
     targets: [
         .target(
